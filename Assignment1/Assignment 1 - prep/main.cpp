@@ -1,9 +1,11 @@
 //
+//  Jan, 24, 2020
+//
 //  BME 122
 //  Assignment 1
 //
-//  Created by Gurman Brar on 2020-01-16.
-//  Copyright © 2020 Gurman Brar. All rights reserved.
+//  Created by Gurman Brar and Aryan Singh on 2020-01-16.
+//  Copyright © 2020 Gurman Brar & Aryan Singh. All rights reserved.
 //
 
 #include <iostream>
@@ -106,6 +108,7 @@ public:
         return true;
     }
     
+    // Overloaded equals operator
     bool operator==(const ArtCollection& rhs) const{
         bool is_equal = true;
         
@@ -135,12 +138,13 @@ public:
     
     }
     
-    // External function that has direct access to private members of art collection
+    // External function that has direct access to private members of art collection. Also contains friend class for testing driver and assertions.
     friend ArtCollection operator+(const ArtCollection lhs, const ArtCollection rhs);
     friend class artCollectionTest;
     
 };
 
+// ArtCollection plus operator (overloaded). Combines two artcollection objects and return one with both instance.
 ArtCollection operator+(const ArtCollection lhs, const ArtCollection rhs) {
     ArtCollection combination (lhs);
     
@@ -156,7 +160,7 @@ ArtCollection operator+(const ArtCollection lhs, const ArtCollection rhs) {
 }
 
 
-
+// Class for testing artCollection
 class artCollectionTest{
     vector<Artwork> test_values;
     vector<SoldArtwork> sold_test_values;
@@ -242,7 +246,7 @@ public:
 };
 
 
-
+// Class testing Artwork class
 class artworkTest{
      vector<Artwork> test_values;
        
@@ -276,7 +280,7 @@ public:
     
 };
 
-
+// Class testing soldArtwork class
 class sellArtworkTest{
     vector<SoldArtwork> test_values;
     
@@ -318,6 +322,8 @@ public:
 };
 
 int main(){
+    
+    // Running drivers and assertions to test all code aspects
     
     cout << "Now testing art collection . . ." << endl;
     
