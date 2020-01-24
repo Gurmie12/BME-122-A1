@@ -104,6 +104,9 @@ public:
     bool operator==(const ArtCollection& rhs) const{
         bool is_equal = true;
         
+        if(myArtwork.size() != rhs.myArtwork.size() || mySoldArtwork.size() != rhs.mySoldArtwork.size()) return is_equal = false;
+        
+        while(myArtwork.size() == rhs.myArtwork.size()){
         for(int i = 0; i < myArtwork.size() && is_equal; i++){
             if(myArtwork[i] == rhs.myArtwork[i]){
                 is_equal = true;
@@ -118,6 +121,7 @@ public:
             } else{
                 is_equal = false;
             }
+          }
         }
         
         return is_equal;
@@ -147,22 +151,8 @@ public:
 };
 
 
-    bool test_insert_artwork(Artwork art_peice, ArtCollection& collection){
-        collection.insert_artwork(art_peice);
-        return true;
-    }
-
-
 int main(){
-    Artwork art1("Gurman", "masterpeice", 2001);
-    Artwork art2("Singh", "masterpeice1", 2002);
-    Artwork art3("Brar", "masterpeice2", 2003);
-    Artwork art4("kamal", "masterpeice3", 2004);
     
-    SoldArtwork sold1("sodl1", "270 webster road", 400, art1);
-    
-    ArtCollection collection1;
-    test_insert_artwork(art4, collection1);
     
     
     return 0;
