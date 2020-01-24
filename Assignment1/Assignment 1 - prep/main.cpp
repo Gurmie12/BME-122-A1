@@ -117,7 +117,7 @@ public:
             if(myArtwork[i] == rhs.myArtwork[i]){
                 is_equal = true;
             } else {
-                is_equal = false;
+                return is_equal = false;
             }
         }
         
@@ -125,12 +125,12 @@ public:
             if(mySoldArtwork[j] == rhs.mySoldArtwork[j]){
                 is_equal = true;
             } else{
-                is_equal = false;
+                return is_equal = false;
             }
           }
         }
         
-        return is_equal;
+        return true;;
         
     
     }
